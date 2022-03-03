@@ -22,28 +22,28 @@ public class RomanNumber : ICloneable, IComparable
     }
 
     //Сложение римских чисел
-    public static RomanNumber Add(RomanNumber? n1, RomanNumber? n2)
+    public static RomanNumber operator +(RomanNumber? n1, RomanNumber? n2)
     {
         if (n1 == null || n2 == null) throw new RomanNumberException("ERROR Add-1: One or both numbers are null");
         if (n1.num + n2.num >= 4000) throw new RomanNumberException("ERROR Add-2: Result is more than 4000");
         return new RomanNumber((ushort)(n1.num + n2.num));
     }
     //Вычитание римских чисел
-    public static RomanNumber Sub(RomanNumber? n1, RomanNumber? n2)
+    public static RomanNumber operator -(RomanNumber? n1, RomanNumber? n2)
     {
         if (n1 == null || n2 == null) throw new RomanNumberException("ERROR Sub-1: One or both numbers are null");
         if (n1.num <= n2.num) throw new RomanNumberException("ERROR Sub-2: A negative result");
         return new RomanNumber((ushort)(n1.num - n2.num));
     }
     //Умножение римских чисел
-    public static RomanNumber Mul(RomanNumber? n1, RomanNumber? n2)
+    public static RomanNumber operator *(RomanNumber? n1, RomanNumber? n2)
     {
         if (n1 == null || n2 == null) throw new RomanNumberException("ERROR Mul-1: One or both numbers are null");
         if (n1.num * n2.num >= 4000) throw new RomanNumberException("ERROR Mul-2: Result is more than 4000");
         return new RomanNumber((ushort)(n1.num * n2.num));
     }
     //Целочисленное деление римских чисел
-    public static RomanNumber Div(RomanNumber? n1, RomanNumber? n2)
+    public static RomanNumber operator /(RomanNumber? n1, RomanNumber? n2)
     {
         if (n1 == null || n2 == null) throw new RomanNumberException("ERROR Div-1: One or more numbers are null");
         if (n1.num / n2.num <= 0) throw new RomanNumberException("ERROR Div-2: Result less than or equal to 0");

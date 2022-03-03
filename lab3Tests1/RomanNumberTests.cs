@@ -43,11 +43,11 @@ namespace Tests
             RomanNumber test1_2 = new RomanNumber(34);
             string expected1 = "LXXXIX";
 
-            Assert.AreEqual(expected1, RomanNumber.Add(test1_1, test1_2).ToString());
+            Assert.AreEqual(expected1, (test1_1 + test1_2).ToString());
             RomanNumber test2_1 = new RomanNumber(3550);
             RomanNumber test2_2 = new RomanNumber(650); 
-            Assert.ThrowsException<RomanNumberException>(() => RomanNumber.Add(test2_1, test2_2));
-            Assert.ThrowsException<RomanNumberException>(() => RomanNumber.Add(null as RomanNumber, test2_2));
+            Assert.ThrowsException<RomanNumberException>(() => test2_1 + test2_2);
+            Assert.ThrowsException<RomanNumberException>(() => ((null as RomanNumber) + test2_2));
         }
 
         [TestMethod()]
@@ -57,9 +57,9 @@ namespace Tests
             RomanNumber test2 = new RomanNumber(34);
             string expected = "XXI";
 
-            Assert.AreEqual(expected, RomanNumber.Sub(test1, test2).ToString());
-            Assert.ThrowsException<RomanNumberException>(() => RomanNumber.Sub(test2, test1));
-            Assert.ThrowsException<RomanNumberException>(() => RomanNumber.Sub(null as RomanNumber, test1));
+            Assert.AreEqual(expected, (test1 - test2).ToString());
+            Assert.ThrowsException<RomanNumberException>(() => (test2 - test1));
+            Assert.ThrowsException<RomanNumberException>(() => ((null as RomanNumber) - test1));
         }
 
         [TestMethod()]
@@ -69,12 +69,12 @@ namespace Tests
             RomanNumber test1_2 = new RomanNumber(34);
             string expected = "MDCCCLXX";
 
-            Assert.AreEqual(expected, RomanNumber.Mul(test1_1, test1_2).ToString());
+            Assert.AreEqual(expected, (test1_1 * test1_2).ToString());
 
             RomanNumber test2_1 = new RomanNumber(550);
             RomanNumber test2_2 = new RomanNumber(32);
-            Assert.ThrowsException<RomanNumberException>(() => RomanNumber.Mul(test2_1, test2_2));
-            Assert.ThrowsException<RomanNumberException>(() => RomanNumber.Mul(null as RomanNumber, test2_2));
+            Assert.ThrowsException<RomanNumberException>(() => (test2_1 * test2_2));
+            Assert.ThrowsException<RomanNumberException>(() => ((null as RomanNumber) * test2_2));
         }
 
         [TestMethod()]
@@ -83,9 +83,9 @@ namespace Tests
             RomanNumber test1 = new RomanNumber(55);
             RomanNumber test2 = new RomanNumber(34);
             string expected = "I";
-            Assert.AreEqual(expected, RomanNumber.Div(test1, test2).ToString());
-            Assert.ThrowsException<RomanNumberException>(() => RomanNumber.Div(test2, test1));
-            Assert.ThrowsException<RomanNumberException>(() => RomanNumber.Div(null as RomanNumber, test2));
+            Assert.AreEqual(expected, (test1 / test2).ToString());
+            Assert.ThrowsException<RomanNumberException>(() => (test2 / test1));
+            Assert.ThrowsException<RomanNumberException>(() => ((null as RomanNumber) / test2));
         }
 
         [TestMethod()]

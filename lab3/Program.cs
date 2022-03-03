@@ -8,10 +8,10 @@ class Program
         ushort x = (ushort)rnd.Next(1, 63), y = (ushort)rnd.Next(1, x);
         Console.WriteLine("x =" + x + " y =" + y);
         Console.WriteLine("x =" + new RomanNumber(x) + " y =" + new RomanNumber(y));
-        Console.WriteLine("x + y = " + x + " + " + y + " = " + RomanNumber.Add(new RomanNumber(x), new RomanNumber(y)) + "(" + (x + y) + ")");
-        Console.WriteLine("x - y = " + x + " - " + y + " = " + RomanNumber.Sub(new RomanNumber(x), new RomanNumber(y)) + "(" + (x - y) + ")");
-        Console.WriteLine("x * y = " + x + " * " + y + " = " + RomanNumber.Mul(new RomanNumber(x), new RomanNumber(y)) + "(" + (x * y) + ")");
-        Console.WriteLine("x / y = " + x + " / " + y + " = " + RomanNumber.Div(new RomanNumber(x), new RomanNumber(y)) + "(" + (x / y) + ")");
+        Console.WriteLine("x + y = " + x + " + " + y + " = " + (new RomanNumber(x) + new RomanNumber(y)) + "(" + (x + y) + ")");
+        Console.WriteLine("x - y = " + x + " - " + y + " = " + (new RomanNumber(x) - new RomanNumber(y)) + "(" + (x - y) + ")");
+        Console.WriteLine("x * y = " + x + " * " + y + " = " +  new RomanNumber(x) * new RomanNumber(y) + "(" + (x * y) + ")");
+        Console.WriteLine("x / y = " + x + " / " + y + " = " +  new RomanNumber(x) / new RomanNumber(y) + "(" + (x / y) + ")");
         Console.WriteLine();
 
         ushort[] Arr = new ushort[5];
